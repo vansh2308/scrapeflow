@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.bruno-ace-regular {
+  font-family: "Bruno Ace", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -136,8 +145,28 @@ button:focus-visible {
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Montserrat';
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    @apply bg-popover-foreground;
   }
+
+}
+
+
+.selector {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+.grad-text {
+  background: -webkit-linear-gradient(0deg, #1CF59B, #00A7E4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
