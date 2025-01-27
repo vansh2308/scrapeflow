@@ -4,8 +4,15 @@ export default {
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
   	extend: {
+		keyframes: {
+			flicker: {
+				'0%': { opacity: "0" },
+				'50%': { opacity: "25%" },
+				'100%': { opacity: "0" },
+			  }
+		},
 		animation: {
-			'spin-slow': 'spin 3s linear infinite'
+			'flicker': 'flicker 3s linear infinite'
 		},
   		borderRadius: {
   			lg: 'var(--radius)',

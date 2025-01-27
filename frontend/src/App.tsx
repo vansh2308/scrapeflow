@@ -10,10 +10,10 @@ export default function App() {
     <section className="w-screen h-screen bg-popover-foreground relative  flex-col gap-10 overflow-hidden">
 
       <div className="absolute top-[63%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center h-[150%] aspect-square">
-        <img src={HeroDots} alt="hero-dots" className="w-screen absolute left-1/2 -translate-x-1/2 blur-3xl opacity-10" />
-        <img src={HeroDots} alt="hero-dots" className="w-[70%] absolute left-1/2 -translate-x-1/2 blur-3xl opacity-80" />
-        <img src={HeroDots} alt="hero-dots" className="w-[75%] absolute left-1/2 -translate-x-1/2 spinner" />
-        <img src={HeroDots} alt="hero-dots" className="w-[62%] absolute left-1/2 -translate-x-1/2 spinner" />
+        <img src={HeroDots} alt="hero-dots" className="w-[90%] absolute left-1/2 -translate-x-1/2 blur-3xl opacity-10 animate-flicker" />
+        <img src={HeroDots} alt="hero-dots" className="w-[70%] absolute left-1/2 -translate-x-1/2 blur-3xl opacity-80 animate-flicker" />
+        <img src={HeroDots} alt="hero-dots" className="w-[75%] absolute left-1/2 -translate-x-1/2" />
+        <img src={HeroDots} alt="hero-dots" className="w-[62%] absolute left-1/2 -translate-x-1/2" />
 
         <div className="flex flex-col items-center -translate-y-[3rem]">
           <h1 className="bruno-ace-regular text-white text-[3rem]">
