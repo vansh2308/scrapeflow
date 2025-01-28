@@ -5,10 +5,31 @@ import { Timeline } from "@/components/Timeline";
 import { LampDemo } from "@/components/Lamp";
 import { CardSpotlight } from "@/components/CardSpotlight";
 import { FaCheck } from "react-icons/fa6";
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 
 
 export default function Hero() {
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const biggerCircleRef = useRef<HTMLImageElement>(null)
+    const smallerCircleRef = useRef<HTMLImageElement>(null)
+    const handleScroll = (e: any) => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+        // WIP: Remove possibly null error 
+        biggerCircleRef.current.style.transform = `translateX(-50%) rotate(${scrollPosition/10}deg)`
+        smallerCircleRef.current.style.transform = `translateX(-50%) rotate(-${scrollPosition/10}deg)`
+        console.log(scrollPosition)
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }, [scrollPosition])
 
     return (
         <>
@@ -18,8 +39,22 @@ export default function Hero() {
                 <div className="absolute top-[63%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center h-[150%] aspect-square">
                     <img src={HeroDots} alt="hero-dots" className="w-[90%] pointer-events-none absolute  left-1/2 -translate-x-1/2 blur-3xl opacity-20 animate-flicker" />
                     <img src={HeroDots} alt="hero-dots" className="w-[70%] pointer-events-none absolute  left-1/2 -translate-x-1/2 blur-3xl opacity-80 animate-flicker" />
-                    <img src={HeroDots} alt="hero-dots" className="w-[75%] pointer-events-none absolute left-1/2 -translate-x-1/2" />
-                    <img src={HeroDots} alt="hero-dots" className="w-[62%] pointer-events-none absolute left-1/2 -translate-x-1/2" />
+
+                    <img
+                        src={HeroDots}
+                        alt="hero-dots"
+                        className={cn("w-[75%] pointer-events-none absolute left-1/2 -translate-x-1/2", `rotate-[${scrollPosition}rad]`)}
+                        ref={biggerCircleRef}
+                    />
+
+                    <img
+                        src={HeroDots}
+                        alt="hero-dots"
+                        className={cn("w-[62%] pointer-events-none absolute left-1/2 -translate-x-1/2", `rotate-[${scrollPosition}rad]`)}
+                        ref={smallerCircleRef}
+                    />
+
+                    {/* <img src={HeroDots} alt="hero-dots" className="w-[62%] pointer-events-none absolute left-1/2 -translate-x-1/2" /> */}
 
                     <div className="flex flex-col items-center ">
                         <h1 className="bruno-ace-regular text-white text-[3rem]">
