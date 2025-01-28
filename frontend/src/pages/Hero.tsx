@@ -14,12 +14,14 @@ export default function Hero() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const biggerCircleRef = useRef<HTMLImageElement>(null)
     const smallerCircleRef = useRef<HTMLImageElement>(null)
-    const handleScroll = (e: any) => {
+    const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
         // WIP: Remove possibly null error 
-        biggerCircleRef.current.style.transform = `translateX(-50%) rotate(${scrollPosition/10}deg)`
-        smallerCircleRef.current.style.transform = `translateX(-50%) rotate(-${scrollPosition/10}deg)`
+        if(biggerCircleRef.current && smallerCircleRef.current){
+            biggerCircleRef.current.style.transform = `translateX(-50%) rotate(${scrollPosition/10}deg)`
+            smallerCircleRef.current.style.transform = `translateX(-50%) rotate(-${scrollPosition/10}deg)`
+        }
         console.log(scrollPosition)
     }
 
