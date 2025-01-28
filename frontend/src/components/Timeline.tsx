@@ -33,7 +33,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-fit bg-foreground dark:bg-neutral-950 font-sans md:px-10 absolute left-1/2 -translate-x-1/2"
+      className="w-screen bg-foreground dark:bg-neutral-950 font-sans md:px-10 relative left-1/2 -translate-x-1/2"
       ref={containerRef}
     >
 
