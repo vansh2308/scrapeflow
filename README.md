@@ -19,7 +19,7 @@
 Run the following in terminal
 ```bash
 git clone https://github.com/vansh2308/website-builder-saas.git
-cd ./scrape-flow
+cd ./scrapeflow
 npm install
 ```
 Setup your .env file 
