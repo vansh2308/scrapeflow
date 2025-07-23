@@ -137,7 +137,7 @@ export default function HomeLandingPage() {
                             <p className="text-white mt-4">
                                 <span className="text-5xl font-semibold text-white">$39.99 </span>
                             </p>
-                            <div className="text-white text-sm mt-6">The perfect plan if you're just getting started with our product.</div>
+                            <div className="text-white text-sm mt-6">The perfect plan if you are just getting started with our product.</div>
                             <ul className="text-white text-sm flex flex-col gap-4 mt-6">
                                 <li className="flex items-center gap-3"> <FaCheck className="text-primary" /> Unlimited Workflows  </li>
                                 <li className="flex items-center gap-3"> <FaCheck className="text-primary" /> Unlimited runs  </li>
